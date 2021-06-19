@@ -1,0 +1,53 @@
+﻿@page "/books"
+
+<h2>Books Store</h2>
+<hr />
+<p>This component demonstrates a SignalR Service with Azure Function.</p>
+<br />
+<h4 style="color:darkgoldenrod">
+    Post Book
+</h4>
+<form>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Author" @bind="author">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Title" @bind="title">
+        </div>
+    </div>
+</form>
+<br />
+<button class="btn btn-primary" style="width:100%" @onclick="Send" disabled="@(!isConnected)">
+    Send to Store and Notify to all Clients
+</button>
+<br />
+<hr />
+<br />
+<h4 style="color:darkgoldenrod">
+    Stored Books
+</h4>
+@if (books != null){
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <td>Timestamp</td>
+                <td>Author</td>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in books)
+            {
+                <tr>
+                    <td>@i.Timestamp.ToString("dd-MM-yy HH:mm")</td>
+                    <td>@i.Author</td>
+                    <td>@i.Title</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<hr />
+<p>@echo</p>
+
