@@ -37,7 +37,7 @@ namespace BookStoreFaaS3LTS
 
             // clients have subscribed to event with name target´s value and will receive the instance
             await signalRMessages.AddAsync(new SignalRMessage {
-                Target = "productBooked",
+                Target = "placedBook",
                 Arguments = new[] { bookPlacement }
             });
         }

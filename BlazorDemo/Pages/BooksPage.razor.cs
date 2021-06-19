@@ -59,7 +59,7 @@ namespace BlazorDemo.Pages
 
         async Task GetStored()
         {
-            var url = "api/StoredOrders";
+            var url = "api/StoredBooks";
             try {
                 books = await _httpClient.GetFromJsonAsync<List<Book>>(url);
                 echo = $"Count: {books.Count}";
