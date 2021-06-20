@@ -1,4 +1,4 @@
-using System.Net;
+﻿using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 
@@ -10,9 +10,9 @@ namespace BookStoreFaaS
 
         [Function("Negotiate")]
         public static HttpResponseData Run(
-			//
+            //
             [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
-			//
+            //
             [SignalRConnectionInfoInput(HubName = HUBNAME)] string connectionInfo)
         {
             var response = req.CreateResponse(HttpStatusCode.OK);
