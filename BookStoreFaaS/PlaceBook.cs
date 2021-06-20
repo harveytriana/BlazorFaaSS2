@@ -9,7 +9,7 @@ namespace BookStoreFaaS
     public static class PlaceBook
     {
         public const string QUEUE_NOTIFICATION = "new-book-notifications";
-	public const string STORE_TABLE = "Books";
+        public const string STORE_TABLE = "Books";
 
         [Function("PlaceBook")]
         public static async Task<PlaceBookAndNotify> Run(

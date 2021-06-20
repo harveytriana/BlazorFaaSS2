@@ -36,7 +36,7 @@ namespace BlazorDemo.Pages
 
         async Task ServiceConnect()
         {
-            var url = "http://localhost:7071/api";
+            var url = $"{_httpClient.BaseAddress}api";
             try {
                 hubConnection = new HubConnectionBuilder()
                     .WithUrl(url)

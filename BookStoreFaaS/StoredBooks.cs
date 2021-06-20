@@ -13,19 +13,24 @@ namespace BookStoreFaaS
 {
     public static class StoredBooks
     {
-        [FunctionName("StoredBooks")]
+        [Function("StoredBooks")]
         public static async Task<List<Book>> Run(
 
-           [HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req,
+           [HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req)
 
-           [Table("Books")] CloudTable cloudTable)
+           //- [Table("Books")] CloudTable cloudTable)
         {
             // by sample
-            var filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "US");
+            //- var filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "US");
             // query
-            var rangeQuery = new TableQuery<Book>().Where(filter);
+            //- var rangeQuery = new TableQuery<Book>().Where(filter);
             // execute query
-            var q = await cloudTable.ExecuteQuerySegmentedAsync(rangeQuery, null);
+            //- var q = await cloudTable.ExecuteQuerySegmentedAsync(rangeQuery, null);
+            //- scape until use real data
+            var q = new List<Book> {
+                new Book { Author = "Harvey Triana", Title = "Blazor Spread", RowKey = Guid.NewGuid().ToString() }
+            };
+            await Task.Delay(300);
 
             // build response
             var ls = new List<Book>();
