@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SignalR Serverless Demo</title>
+    <style>
+        td {
+            width: 100px;
+        }
+
+        input {
+            border: 1px solid #dcdcdc;
+            padding: 4px;
+        }
+
+        :focus {
+            outline: none;
+            border: 1px solid silver;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        hr {
+            height: 1px;
+            background-color: #ccc;
+            border: none;
+        }
+
+        ul {
+            font-family: 'Segoe UI'
+        }
+    </style>
+</head>
+<body spellcheck="false">
+    <h1>JS-Demo</h1>
+    <hr />
+    <h3>Post Book</h3>
+    <table>
+        <tr>
+            <td>Author</td>
+            <td><input id="author" value="Jorge Isaacs" /></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td><input id="title" value="María" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="btn" type="button" value="Post" class="btn" disabled="disabled" /></td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <ul id="ls">
+    </ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/@aspnet/signalr@1.0.3/dist/browser/signalr.js"></script>
+    <script>
+        const ls = document.getElementById('ls');
+        const btn = document.getElementById('btn');
+        const apiRoot = 'http://localhost:7071/api';
+
+        serviceConnect();
+
+        function serviceConnect() {
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl(apiRoot)
+                .build();
+
+            connection.start()
+                .then(() => init())
+                .catch(console.error);
+
+            // subscribe to signalr event
+            connection.on('placedBook', placedBook);
+        }
+
+        function init() {
+            console.log('** connected');
+            btn.removeAttribute('disabled');
+        }
+
+        function placedBook(book) {
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(book.Author + ', ' + book.Title));
+            ls.appendChild(li);
+        }
+
+        function postBook() {
+            let book = {
+                Author: document.getElementById('author').value,
+                Title: document.getElementById('title').value,
+            };
+            let headers = {
+                'Content-Type': 'application/json'
+            };
+            let url = apiRoot + '/PlaceBook';
+
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(book),
+                headers: headers
+            });
+        }
+
+        btn.addEventListener('click', function () {
+            postBook();
+        });
+    </script>
+</body>
+</html>

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreFaaS", "BookStoreF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreFaaS3LTS", "BookStoreFaaS3LTS\BookStoreFaaS3LTS.csproj", "{FF96E5CC-1A30-415E-B59F-8C8608E2D5E3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSDemo", "JSDemo\JSDemo\JSDemo.csproj", "{DD84E3B8-E956-45F6-A087-045B1BC115F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FF96E5CC-1A30-415E-B59F-8C8608E2D5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF96E5CC-1A30-415E-B59F-8C8608E2D5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF96E5CC-1A30-415E-B59F-8C8608E2D5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD84E3B8-E956-45F6-A087-045B1BC115F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD84E3B8-E956-45F6-A087-045B1BC115F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD84E3B8-E956-45F6-A087-045B1BC115F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD84E3B8-E956-45F6-A087-045B1BC115F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
