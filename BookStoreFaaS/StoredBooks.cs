@@ -8,10 +8,10 @@ namespace BookStoreFaaS
     {
         [Function("StoredBooks")]
         public static List<Book> Run(
-           [HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req,
-           [TableInput("Books")] List<Book> cloudTable)
+           [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req,
+           [TableInput("Books")] List<Book> data)
         {
-            return cloudTable;
+            return data;
         }
     }
 }

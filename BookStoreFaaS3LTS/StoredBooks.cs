@@ -11,7 +11,7 @@ namespace BookStoreFaaS3LTS
     {
         [FunctionName("StoredBooks")]
         public static async Task<List<Book>> Run(
-           [HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req,
+           [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req,
            [Table("Books")] CloudTable cloudTable)
         {
             // query

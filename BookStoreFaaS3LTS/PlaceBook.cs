@@ -31,8 +31,7 @@ namespace BookStoreFaaS3LTS
                 PartitionKey = "US",
                 RowKey = Guid.NewGuid().ToString(),
                 Author = bookPlacement.Author,
-                Title = bookPlacement.Title,
-                Timestamp = DateTime.UtcNow // simulate
+                Title = bookPlacement.Title
             });
             // will execute signalR function
             await notifications.AddAsync(bookPlacement);

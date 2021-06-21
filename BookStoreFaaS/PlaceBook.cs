@@ -23,8 +23,7 @@ namespace BookStoreFaaS
                 PartitionKey = "US",
                 RowKey = Guid.NewGuid().ToString(),
                 Author = bookPlacement.Author,
-                Title = bookPlacement.Title,
-                Timestamp = DateTime.UtcNow // simulate
+                Title = bookPlacement.Title
             };
             return new PlaceBookAndNotify() {
                 QueueBook = book,
