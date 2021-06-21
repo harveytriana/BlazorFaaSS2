@@ -32,6 +32,7 @@ namespace BookStoreFaaS3LTS
                 RowKey = Guid.NewGuid().ToString(),
                 Author = bookPlacement.Author,
                 Title = bookPlacement.Title,
+                Timestamp = DateTime.UtcNow // simulate
             });
             // will execute signalR function
             await notifications.AddAsync(bookPlacement);

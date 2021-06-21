@@ -31,16 +31,14 @@
     <table class="table table-sm">
         <thead>
             <tr>
-                <td>Timestamp</td>
-                <td>Author</td>
-                <td>Title</td>
+                <th>Author</th>
+                <th>Title</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var i in books)
             {
                 <tr>
-                    <td>@i.Timestamp.ToString("dd-MM-yy HH:mm")</td>
                     <td>@i.Author</td>
                     <td>@i.Title</td>
                 </tr>

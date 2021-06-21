@@ -14,8 +14,7 @@ namespace BlazorDemo.Pages
         record Book(
             string Author,
             string Title,
-            string RowKey = default,
-            DateTimeOffset Timestamp = default);
+            string RowKey);
 
         [Inject] HttpClient _httpClient { get; set; }
 
@@ -31,7 +30,9 @@ namespace BlazorDemo.Pages
         {
             echo = "Loading...";
             await ServiceConnect();
-            await GetStored();
+            if (isConnected) {
+                await GetStored();
+            }
         }
 
         async Task ServiceConnect()
@@ -42,14 +43,14 @@ namespace BlazorDemo.Pages
                     .WithUrl(url)
                     .Build();
                 await hubConnection.StartAsync();
-                isConnected = hubConnection.State == HubConnectionState.Connected;
 
                 hubConnection.On<Book>("placedBook", (book) => {
                     books.Add(book);
                     echo = $"Count: {books.Count}";
                     StateHasChanged();
                 });
-
+                // no errors
+                isConnected = true;
                 echo = "Connected.";
             }
             catch (Exception e) {
@@ -77,7 +78,7 @@ namespace BlazorDemo.Pages
         async Task Send()
         {
             echo = "Sending...";
-            var bookPlacement = new Book(author, title);
+            var bookPlacement = new Book(author, title, default);
             try {
                 var response = await _httpClient.PostAsJsonAsync("api/PlaceBook", bookPlacement);
             }

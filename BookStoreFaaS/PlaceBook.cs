@@ -24,6 +24,7 @@ namespace BookStoreFaaS
                 RowKey = Guid.NewGuid().ToString(),
                 Author = bookPlacement.Author,
                 Title = bookPlacement.Title,
+                Timestamp = DateTime.UtcNow // simulate
             };
             return new PlaceBookAndNotify() {
                 QueueBook = book,

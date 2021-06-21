@@ -1,5 +1,6 @@
 ﻿using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
+using System.Net;
 
 namespace BookStoreFaaS
 {
@@ -8,30 +9,14 @@ namespace BookStoreFaaS
         public const string HUBNAME = "notifications";
 
         [Function("Negotiate")]
-        public static SignalRConnectionInfo Run(
-        [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
-        [SignalRConnectionInfoInput(HubName = HUBNAME)] SignalRConnectionInfo connectionInfo)
+        public static HttpResponseData Run(
+            [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
+            [SignalRConnectionInfoInput(HubName = HUBNAME)] string connectionInfo)
         {
-            return connectionInfo;
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content-Type", "application/json");
+            response.WriteString(connectionInfo);
+            return response;
         }
-
-        public class SignalRConnectionInfo
-        {
-            public string Url { get; set; }
-            public string AccessToken { get; set; }
-        }
-
-        // Another approach, Anthony Chu´s sample, not declare class SignalRConnectionInfo
-        // and return HttpResponseData isntead of SignalRConnectionInfo, needs using System.Net
-        //[Function("Negotiate")]
-        //public static HttpResponseData Run(
-        //    [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
-        //    [SignalRConnectionInfoInput(HubName = HUBNAME)] string connectionInfo)
-        //{
-        //    var response = req.CreateResponse(HttpStatusCode.OK);
-        //    response.Headers.Add("Content-Type", "application/json");
-        //    response.WriteString(connectionInfo);
-        //    return response;
-        //}
     }
 }
