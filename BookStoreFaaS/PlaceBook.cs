@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace BookStoreFaaS
 {
-    // add entity book to table store and create a queue for signalr notification
+    /// <summary>
+    /// add entity book to table store and create a queue for signalr notification
+    /// </summary>
     public static class PlaceBook
     {
         public const string QUEUE_NOTIFICATION = "new-book-notifications";
@@ -30,7 +32,7 @@ namespace BookStoreFaaS
         }
     }
 
-    // Multiple output bindings
+    // multiple output bindings
     public class PlaceBookAndNotify
     {
         [QueueOutput(PlaceBook.QUEUE_NOTIFICATION)]
