@@ -1,5 +1,7 @@
-
-
 REM
-local.settings.json
-"CORS": "http://127.0.0.1:5500,http://localhost:18000,http://localhost:19000;http://localhost:5000",
+
+Ask Anthony: Getting started with .NET 5 on Azure Functions
+https://www.youtube.com/watch?v=zVKc5g0Jz6Q
+
+Quickstart: Create a chat room with Azure Functions and SignalR Service using C#
+https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-azure-functions-csharp

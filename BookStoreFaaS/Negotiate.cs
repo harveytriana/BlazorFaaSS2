@@ -10,7 +10,7 @@ namespace BookStoreFaaS
 
         [Function("Negotiate")]
         public static HttpResponseData Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req,
             [SignalRConnectionInfoInput(HubName = HUBNAME)] string connectionInfo)
         {
             var response = req.CreateResponse(HttpStatusCode.OK);
