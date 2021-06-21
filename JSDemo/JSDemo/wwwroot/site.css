@@ -1,0 +1,31 @@
+﻿body {
+    margin:30px;
+}
+
+td {
+    width: 100px;
+}
+
+input {
+    border: 1px solid #dcdcdc;
+    padding: 4px;
+}
+
+:focus {
+    outline: none;
+    border: 1px solid silver;
+}
+
+.btn {
+    width: 100%;
+}
+
+hr {
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+
+ul {
+    font-family: 'Segoe UI'
+}

@@ -3,35 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>SignalR Serverless Demo</title>
-    <style>
-        td {
-            width: 100px;
-        }
-
-        input {
-            border: 1px solid #dcdcdc;
-            padding: 4px;
-        }
-
-        :focus {
-            outline: none;
-            border: 1px solid silver;
-        }
-
-        .btn {
-            width: 100%;
-        }
-
-        hr {
-            height: 1px;
-            background-color: #ccc;
-            border: none;
-        }
-
-        ul {
-            font-family: 'Segoe UI'
-        }
-    </style>
+    <link href="site.css" rel="stylesheet" />
 </head>
 <body spellcheck="false">
     <h1>JS-Demo</h1>
@@ -62,7 +34,7 @@
         const btn = document.getElementById('btn');
         const apiRoot = 'http://localhost:7071/api';
 
-        serviceConnect();
+        setTimeout(serviceConnect, 4000);
 
         function serviceConnect() {
             const connection = new signalR.HubConnectionBuilder()
@@ -78,7 +50,6 @@
         }
 
         function init() {
-            console.log('** connected');
             btn.removeAttribute('disabled');
         }
 

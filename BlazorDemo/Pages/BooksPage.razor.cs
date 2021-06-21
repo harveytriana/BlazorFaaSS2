@@ -11,10 +11,7 @@ namespace BlazorDemo.Pages
 {
     public partial class BooksPage : ComponentBase, IAsyncDisposable
     {
-        record Book(
-            string Author,
-            string Title,
-            string RowKey);
+        record Book(string Author, string Title, string RowKey);
 
         [Inject] HttpClient _httpClient { get; set; }
 
@@ -64,7 +61,7 @@ namespace BlazorDemo.Pages
             try {
                 books = await _httpClient.GetFromJsonAsync<List<Book>>(url);
                 echo = $"Count: {books.Count}";
-                // 
+                // sample for empty
                 if (books.Any() == false) {
                     author = "John Lennon";
                     title = "In His On Right";
