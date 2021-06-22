@@ -25,6 +25,7 @@
     </table>
     <br />
     <hr />
+    <h3>Books Store</h3>
     <ul id="ls">
     </ul>
 
@@ -50,6 +51,14 @@
         }
 
         function init() {
+            fetch(apiRoot + '/StoredBooks')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach((book) => {
+                        placedBook(book);
+                    });
+                });
+            // enable to send data
             btn.removeAttribute('disabled');
         }
 
@@ -67,9 +76,7 @@
             let headers = {
                 'Content-Type': 'application/json'
             };
-            let url = apiRoot + '/PlaceBook';
-
-            fetch(url, {
+            fetch(apiRoot + '/PlaceBook', {
                 method: 'POST',
                 body: JSON.stringify(book),
                 headers: headers

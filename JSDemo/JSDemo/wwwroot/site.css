@@ -1,5 +1,7 @@
 ﻿body {
-    margin:30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 30px;
 }
 
 td {
@@ -26,6 +28,6 @@ hr {
     border: none;
 }
 
-ul {
-    font-family: 'Segoe UI'
+li{
+    margin-bottom:4px;
 }

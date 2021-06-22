@@ -78,6 +78,7 @@ namespace BlazorDemo.Pages
             var bookPlacement = new Book(author, title, default);
             try {
                 var response = await _httpClient.PostAsJsonAsync("api/PlaceBook", bookPlacement);
+                echo = "Ready.";
             }
             catch (Exception e) {
                 echo = $"Exception: {e.Message}";
