@@ -1,7 +1,7 @@
-using Microsoft.Azure.Functions.Worker.Configuration;
-using Microsoft.Extensions.Configuration;
+// ======================================
+// BlazorSpread.net
+// ======================================
 using Microsoft.Extensions.Hosting;
-using System.Threading.Tasks;
 
 namespace BookStoreFaaS
 {

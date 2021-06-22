@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿// ======================================
+// BlazorSpread.net
+// ======================================
+using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;

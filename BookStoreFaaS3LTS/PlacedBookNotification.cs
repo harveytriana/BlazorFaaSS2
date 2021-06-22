@@ -1,4 +1,7 @@
-﻿using Microsoft.Azure.WebJobs;
+﻿// ======================================
+// BlazorSpread.net
+// ======================================
+using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;

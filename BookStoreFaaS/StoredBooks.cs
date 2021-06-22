@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// ======================================
+// BlazorSpread.net
+// ======================================
+using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 

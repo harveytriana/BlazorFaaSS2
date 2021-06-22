@@ -1,4 +1,7 @@
-﻿using Microsoft.Azure.Functions.Worker;
+﻿// ======================================
+// BlazorSpread.net
+// ======================================
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using System.Net;
 

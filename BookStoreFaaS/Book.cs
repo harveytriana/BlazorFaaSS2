@@ -1,4 +1,7 @@
-﻿using Microsoft.Azure.Cosmos.Table;
+﻿// ======================================
+// BlazorSpread.net
+// ======================================
+using Microsoft.Azure.Cosmos.Table;
 
 namespace BookStoreFaaS
 {

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿// ======================================
+// BlazorSpread.net
+// ======================================
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;

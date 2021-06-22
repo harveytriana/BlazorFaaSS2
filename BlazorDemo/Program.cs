@@ -1,3 +1,6 @@
+// ======================================
+// BlazorSpread.net
+// ======================================
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -19,8 +22,7 @@ namespace BlazorDemo
 
             var functionsbase = IS_DEVELOPMENT ?
                 "http://localhost:7071" :
-                "https://bookstorefaas5.azurewebsites.net";
-            //- "https://bookstorefaas3lts.azurewebsites.net";
+                "https://<YOUR_SERVICE_NAME>.azurewebsites.net";
 
             builder.Services.AddScoped(sp => new HttpClient {
                 BaseAddress = new Uri(functionsbase)
