@@ -19,9 +19,8 @@ namespace BlazorDemo
 
             var functionsbase = IS_DEVELOPMENT ?
                 "http://localhost:7071" :
-                //- "https://bookstorefaas3lts.azurewebsites.net";
                 "https://bookstorefaas5.azurewebsites.net";
-                //- "https://YOUR_FUNCTION_APP.azurewebsites.net";
+            //- "https://bookstorefaas3lts.azurewebsites.net";
 
             builder.Services.AddScoped(sp => new HttpClient {
                 BaseAddress = new Uri(functionsbase)

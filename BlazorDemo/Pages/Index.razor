@@ -1,5 +1,24 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<h2>
+	Blazor running FaaS with SignalR Service
+</h2>
+<hr />
+<p>
+	@ms
+</p>
+<hr />
+<a href="https://www.blazorspread.net" style="color:goldenrod">BlazorSpread.net</a>
 
-Welcome to your new app.
+@code {
+	MarkupString ms => (MarkupString)description;
+
+	string description = $@"
+This is an example of how Azure serverless functions can be consumed from Blazor WASM.
+<br><br>
+To run this project in development mode, the <b>BookStoreFaaS</b> or <b>BookStoreFaaS3LTS</b> project must be run simultaneously.
+<br><br>
+The Serverless Functions has origin <b>{fs}<b>";
+
+	static string fs => Program.IS_DEVELOPMENT ? "DevelopmentStorage" : "Azure";
+}
