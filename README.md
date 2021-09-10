@@ -8,6 +8,9 @@ To properly execute this code, you must keep in mind what is explained in the po
 
 `MIT license. Author: Harvey Triana. Contact: admin@blazorspread.net`
 
+
+P.S. *If this publication was useful, please, do not forget to mark a star, I appreciate it.*
+
 ---
 
 *Last edition: 21-09-2021*
